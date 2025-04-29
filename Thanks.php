@@ -87,7 +87,7 @@
 <div class="container thank-you-message">
     <h1>Terima Kasih!</h1>
     <p><b>Terima kasih atas review yang luar biasa! Kami harap Anda akan terus berbagi pengalaman membaca Anda untuk membantu banyak pembaca lainnya!</b></p>
-    <a href="Beranda.html">Kembali ke Halaman Utama</a>
+    <a href="Beranda.php">Kembali ke Halaman Utama</a>
 </div>
 
 </body>

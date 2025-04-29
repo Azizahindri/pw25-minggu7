@@ -1,7 +1,7 @@
 <?php
-include 'database/db.php'; // Ganti dengan koneksi ke database kamu
+include 'database/db.php'; 
 
-// Query untuk mendapatkan buku dan rata-rata rating
+
 $query = "
     SELECT 
         b.id_book,

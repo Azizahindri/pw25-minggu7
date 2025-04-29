@@ -33,7 +33,6 @@ $result = mysqli_query($conn, $queryBook);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.5/dist/sweetalert2.min.css" rel="stylesheet">
 
-<!-- Other head content -->
     <style>
         body {
             background-color: rgb(115, 0, 35);
@@ -154,7 +153,7 @@ $result = mysqli_query($conn, $queryBook);
         </form>
     </div>
 
-    <!-- Sebelum penutup </body> -->
+  
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>

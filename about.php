@@ -204,22 +204,22 @@ $result = mysqli_query($conn, $query);
             <h3 class="section-title text-center">Tim Kami</h3>
             <div class="row">
                 <div class="col-md-4 team-member">
-                    <img src="mh.jpg" alt="Xu Minghao">
+                    <img src="images/mh.jpg" alt="Xu Minghao">
                     <h5>Xu Minghao</h5>
                     <p>CEO & Founder</p>
                 </div>
                 <div class="col-md-4 team-member">
-                    <img src="dk.jpg" alt="Lee Dokyeom">
+                    <img src="images/dk.jpg" alt="Lee Dokyeom">
                     <h5>Lee Dokyeom</h5>
                     <p>Creative Director</p>
                 </div>
                 <div class="col-md-4 team-member">
-                    <img src="sc.jpg" alt="Choi Seungcheol">
+                    <img src="images/sc.jpg" alt="Choi Seungcheol">
                     <h5>Choi Seungcheol</h5>
                     <p>Lead Developer</p>
                 </div>
             </div>
-        </section>
+        </section>
     </div>
 
     <footer class="footer">

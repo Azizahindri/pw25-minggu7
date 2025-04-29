@@ -1,7 +1,6 @@
 <?php
 include 'database/db.php';
 
-// Pastikan id_book dikirim melalui URL
 if (!isset($_GET['id_book'])) {
     echo "Buku tidak ditemukan.";
     exit;
@@ -9,7 +8,6 @@ if (!isset($_GET['id_book'])) {
 
 $id_book = $_GET['id_book'];
 
-// Ambil detail buku
 $queryBook = "SELECT * FROM crud_041_book WHERE id_book = ?";
 $stmt = $conn->prepare($queryBook);
 $stmt->bind_param("s", $id_book);

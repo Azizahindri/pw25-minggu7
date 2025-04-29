@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Review Buku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: rgb(115, 0, 35);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            margin-top: 30px;
+        }
+
+        .header h1 {
+            color: rgb(253, 253, 253);
+            font-size: 72px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            direction: row;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 35px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #ffcc00; 
+        }
+
+        .rating input:checked + label {
+            color: #ffcc00;
+        }
+
+        .btn-back {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-back p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .image {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 700px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Review Time! ✎</h1>
+        <p>Tulis ulasanmu dan beri rating buku ini untuk membantu sesama pembaca menemukan cerita yang sempurna.</p>
+        <hr>
+    </div>
+
+    <div class="container">
+        <form id="reviewForm">
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bookTitle">Judul Buku:</label>
+                <input type="text" id="bookTitle" class="form-control" placeholder="Masukkan judul buku" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reviewContent">Isi Review:</label>
+                <textarea id="reviewContent" class="form-control" rows="4" placeholder="Tulis review Anda..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Rating (1-5):</label>
+                <div class="rating">
+                    <input type="radio" name="rating" id="rating1" value="5">
+                    <label for="rating1">★</label>
+                    <input type="radio" name="rating" id="rating2" value="4">
+                    <label for="rating2">★</label>
+                    <input type="radio" name="rating" id="rating3" value="3">
+                    <label for="rating3">★</label>
+                    <input type="radio" name="rating" id="rating4" value="2">
+                    <label for="rating4">★</label>
+                    <input type="radio" name="rating" id="rating5" value="1">
+                    <label for="rating5">★</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Tanggal:</label>
+                <input type="date" id="date" class="form-control" required>
+            </div>
+
+            <input type="submit" value="Save" class="btn btn-primary mb-3">
+            <input type="reset" value="Delete" class="btn btn-danger mb-3">
+    
+            <a href="Beranda.html" target="_blank">Back</a>
+    </div>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var bookTitle = document.getElementById('bookTitle').value;
+            var reviewContent = document.getElementById('reviewContent').value;
+            var rating = document.querySelector('input[name="rating"]:checked').value;
+            var date = document.getElementById('date').value;
+
+            var reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+            reviews.push({
+                name: name,
+                title: bookTitle,
+                content: reviewContent,
+                rating: rating,
+                date: date
+            });
+
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+
+            window.location.href = 'thanks.html';
+        });
+    </script>
+
+</body>
+</html>

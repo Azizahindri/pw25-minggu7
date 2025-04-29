@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - BookView</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(115, 0, 35);
+            font-family: 'Arial', sans-serif;
+            color: #fafcff;
+        }
+        .book-item {
+            border: 1px solid #d3bbbbc6;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            display: none;
+        }
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .book-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            color: #fafcff;
+            line-height: 1.8;
+            text-align: center;
+            text-align: justify;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-member {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 120px;
+            height: 120px;
+        }
+
+        .team-member h5 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fafcff;
+            margin-top: 10px;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .navbar {
+            background-color: #ffffff;
+        }
+        .navbar-nav .nav-link {
+            color: rgb(255, 0, 0) !important; 
+        }
+        .navbar-nav .nav-link:hover {
+            color: rgb(0, 0, 0) !important; 
+        }
+        .navbar-nav .nav-link.active {
+            color: rgb(187, 9, 9) !important;
+        }
+
+        /* Ensure the dropdown is clickable */
+        .dropdown-menu {
+            z-index: 1050; /* Make sure it's on top */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: crimson;">BookView</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Beranda.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Genre
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="filterGenre('fiksi')">Fiksi</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterGenre('non-fiksi')">Non-Fiksi</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterGenre('romansa')">Romansa</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterGenre('fantasi')">Fantasi</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterGenre('misteri')">Misteri</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterGenre('sejarah')">Sejarah</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="book-item fiksi col-md-3">
+            <img src="novel1.jpg" alt="Book 1">
+            <hr>
+            <h5>eiffel i'm in love </h5>
+            <p>Penulis: Rachmania Arunita </p>
+            <a href="form.html"><p> Isi Review </p></a>
+            <details>
+                <summary> Deskripsi buku: </summary>
+                <p align="justify">...</p>
+            </details>
+            <a href="Review.html?title=eiffel%20i%27m%20in%20love">
+                <p> Review </p>
+            </a>
+        </div>
+        
+        <div class="book-item non-fiksi col-md-3">
+            <img src="novel2.jpg" alt="Book 2">
+            <hr>
+            <h5>The Museum of Lost and Found </h5>
+            <p>Penulis: Leila Sales </p>
+            <a href="form.html">
+                <p> Isi Review </p>
+                </a>
+            <details>
+                <summary> Deskripsi buku: </summary>
+                <p align = "justify" >Vanessa isn’t sure which happened first: finding the abandoned museum or losing her best friend Bailey. She doesn’t know what to do with herself now that Bailey has left her behind — but when she stumbles upon an empty, forgotten museum, her purpose becomes clear. Vanessa starts filling the museum with her own artifacts and memories, hoping that perhaps, if she can find the right way to tell the story of her broken friendship, she can figure out how to make it whole again. As Vanessa’s museum grows, it seems like the place might have the answers to other questions, too. Like why a mysterious work of art was left behind. Or how to deal with a military dad who’s trying to parent from thousands of miles away. Or why Vanessa’s bad habit is getting harder and harder to quit. Or even, maybe, how to set the past to rest and find a way to move forward. Moving and charming, The Museum of Lost and Found is about how we grow apart from some people as we grow up — and how sometimes we can find new pieces of ourselves in the aftermath. </p>
+            </details>
+            <a href="Review.html?title=The%20Museum%20of%20Lost%20and%20Found">
+                <p> Review </p>
+                </a>               
+        </div>
+
+        <div class="book-item romansa col-md-3">
+            <img src="novel3.jpg" alt="Book 3">
+            <hr>
+            <h5>Semua Ikan di Langit </h5>
+            <p>Penulis: Ziggy Zezsyazeoviennazabrizkie</p>
+            <a href="form.html">
+                <p> Isi Review </p>
+                </a>
+            <details>
+                <summary> Deskripsi buku: </summary>
+            <p align = "justify">"Pekerjaan saya memang kedengaran membosankan— mengelilingi tempat yang itu-itu saja, diisi kaki-kaki berkeringat dan orang-orang berisik, diusik cicak-cicak kurang ajar, mendengar lagu aneh tentang tahu berbentuk bulat dan digoreng tanpa persiapan sebelumnya—tapi saya menggemarinya. Saya senang mengetahui cerita manusia dan kecoa dan tikus dan serangga yang mampir. Saya senang melihat-lihat isi tas yang terbuka, membaca buku yang dibalik-balik di kursi belakang, turut mendengarkan musik yang dinyanyikan di kepala seorang penumpang… bahkan kadang-kadang, menyaksikan aksi pencurian. Trayek saya memang hanya melewati Dipatiukur-Leuwipanjang, sebelum akhirnya bertemu Beliau, dan memulai trayek baru: mengelilingi angkasa, melintasi dimensi ruang dan waktu."</p>
+            </details>
+            <a href="Review.html?title=Semua%20Ikan%20di%20Langit">
+                    <p> Review </p>
+                    </a>
+        </div>
+
+        <div class="book-item sejarah col-md-3">
+            <img src="novel4.jpg" alt="Book 4">
+            <hr>
+                <h5>Serangkai </h5>
+                <p>Penulis: Valerie Patkar </p>
+                <a href="form.html">
+                    <p> Isi Review </p>
+                    </a>
+            <details>
+                <summary> Deskripsi buku: </summary>
+                <p align = "justify">Tetapi itu bukanlah masalah kalau kita nggak berani, Kai.Karena setiap manusia tidak hanya sekedar lahir dari tulang, namun juga dari hati. Semesta tidak hanya menciptakan tubuh, namun juga rasa. Lalu, waktu tidak hanya mengenai hari esok, namun juga kemarin. Kecelakaan yang terjadi di perhelatan Grand Prix Formula 1 membawa Kai Deverra kembali pada penyesalan ditinggal oleh kekasih lamanya kepada Karina Maladivas Nota yang baru saja pulang dari kesepian. Sehelai cerita kesedihan Kai Deverra bersatu dengan sehelai kisah kesepian Divas dan membentuk sehelai cerita untuk mengenang yang telah hilang. </p>
+            </details>
+            <a href="Review.html?title=Serangkai">
+                        <p> Review </p>
+                        </a>
+        </div>
+
+        <div class="book-item misteri col-md-3">
+            <img src="novel5.jpg" alt="Book 5">
+            <hr>
+            <h5>Hello, Cello </h5>
+            <p>Penulis: Nadia Ristivani </p>
+            <a href="form.html">
+                <p> Isi Review </p>
+                </a>
+            <details>
+                <summary> Deskripsi buku: </summary>
+            <p align = "justify">Jatuh cinta lagi? Hmm, sepertinya itu tak ada lagi dalam kamus Helga. Kegagalannya dalam urusan cinta dan selalu disakiti oleh cowok, membuatnya sudah merasa cukup untuk menjalin hubungan. Untuk apa mengulangi semuanya lagi dari awal?  Sebagai seorang penulis, Helga selalu mengabadikan hal yang berkesan di dalam hidupnya dalam bentuk buku. Dan di tengah proses penulisan buku keenamnya, ia malah dipertemukan dengan seorang ‘buaya’ tampan bernama Marcello atau yang biasa di sebut Cello.  Cello yang awalnya hanya ingin mendekati Una – yaitu seorang gadis yang populer di kampusnya, justru terjebak dan malah semakin dekat dengan Helga yang aneh dan ajaib karena sering berpikir dan bersikap terlalu random. Namun, siapa sangka Cello malah semakin penasaran dengan gadis yang hatinya sudah membeku seperti itu? Baginya, Helga merupakan sosok yang ‘unik’ dan belum pernah ia jumpai sebelumnya. Mampukah Cello, menaklukan hati Helga?</p>
+            </details>
+            <a href="Review.html?title=Hello,%20Cello">
+                    <p> Review </p>
+                    </a>
+        </div>
+
+        <div class="book-item fantasi col-md-3">
+            <img src="novel6.jpg" alt="Book 6">
+            <hr>
+            <h5>Hello </h5>
+            <p>Penulis: Tere Liye </p>
+            <a href="form.html">
+                <p> Isi Review </p>
+                </a>
+            <details>
+                <summary> Deskripsi buku: </summary>
+            <p align = "justify">Ana, seorang arsitek muda berbakat, selalu ngerasa ada magis tersendiri dalam setiap bangunan tua. Setiap retakan dinding dan ukiran kayu baginya adalah sebuah kisah yang menunggu untuk diceritakan. Maka ketika mendapat tawaran untuk merenovasi rumah mewah milik Bu Hesty, ia merasa sangat antusias. Tanpa ia sadari, sebenarnya kesempatan ini akan membawa Anna menuju sebuah teka-teki tentang si pemiliknya.Rumah itu sendiri adalah sebuah saksi bisu sejarah Jakarta. Arsitekturnya yang klasik dan perabotan antiknya seolah membawa kita kembali ke masa lalu. Namun, bagi Ana, rumah ini menyimpan lebih dari sekadar nilai sejarah.Sejak awal, ia merasakan aura misterius yang menyelimuti setiap sudut ruangan. Tapi tenang, ini bukan cerita horor, malahan kisahnya lebih berpotensi bikin kamu baper dan gregetan sendiri sama apa yang akan ditemuin sama Anna. Kisah semakin seru ketika Anna bertemu dengan Bu Hesty, si pemilik rumah. Bu Hesty dengan senang hati berbagi kisah masa lalunya. Ia menceritakan tentang cinta pertamanya, Tigor, seorang pemuda yang bekerja sebagai anak buah di rumah keluarganya. Keduanya tumbuh bersama sejak kecil, saling mengenal satu sama lain lebih dari siapa pun dan saling jatuh cinta. Namun, perbedaan status sosial menjadi penghalang besar bagi hubungan manis mereka. Kaya nggak asing kan? Ayah Bu Hesty, seorang bangsawan yang kaku dan gak pernah mau merestui hubungan putrinya dengan seorang anak pembantu. Semakin dalam Ana menggali sejarah rumah itu, semakin banyak rahasia yang terungkap. Ada sebuah ruangan tersembunyi di balik perpustakaan yang hanya diketahui oleh Bu Hesty dan Tigor. Di ruangan itu, mereka menghabiskan banyak waktu bersama, berbagi mimpi dan harapan. Ana menemukan sebuah kotak berisi surat-surat cinta yang ditulis oleh Tigor untuk Bu Hesty. Setiap kata yang tertulis di atas kertas seolah membawa kembali semangat muda mereka. Pembaca pasti menunggu dua insan ini bersatu kembali di akhir cerita. Namun, apakah Tigor dan Hesty kembali bertemu setelah berpisah puluhan tahun?.</p>
+            </details>
+            <a href="Review.html?title=Hello">
+                    <p> Review </p>
+                    </a>
+                </div>
+            </div>
+    </div>
+    
+    <div class="container">
+        <div class="about-header">
+            <h2 class="section-title"> BookView</h2>
+            <p>BookView adalah platform yang memungkinkan para pembaca untuk berbagi pengalaman dan ulasan tentang buku yang telah mereka baca. Temukan ulasan yang membantu, bergabung dengan komunitas kami, dan beri tahu dunia pendapatmu tentang buku favoritmu!</p>
+        </div>
+
+        <section>
+                <div class="col-md-6">
+                    <p class="about-text">
+                        BookView adalah komunitas yang didedikasikan untuk para pembaca yang ingin berbagi ulasan buku, mendapatkan rekomendasi, dan mencari tahu buku mana yang layak dibaca. Kami percaya bahwa membaca adalah pengalaman pribadi yang lebih baik jika dibagikan dengan orang lain. 
+                    </p>
+                    <p class="about-text">
+                        Kami menyediakan sebuah platform yang mudah digunakan untuk para pembaca untuk memberikan ulasan mereka, memberikan rating, dan berbagi pendapat tentang buku yang telah mereka baca. Kami ingin membantu pembaca membuat keputusan yang lebih baik dengan memberikan informasi yang mereka butuhkan.
+                    </p>
+                    <p class="about-text">
+                        Sejak diluncurkan, BookView telah menjadi tempat bagi pembaca dari berbagai kalangan untuk terhubung dan berbagi kecintaan mereka terhadap dunia literasi. Kami berkomitmen untuk terus memperbaiki platform ini agar pengalaman berbagi buku menjadi lebih menyenangkan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title text-center">Tim Kami</h3>
+            <div class="row">
+                <div class="col-md-4 team-member">
+                    <img src="mh.jpg" alt="Xu Minghao">
+                    <h5>Xu Minghao</h5>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="dk.jpg" alt="Lee Dokyeom">
+                    <h5>Lee Dokyeom</h5>
+                    <p>Creative Director</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="sc.jpg" alt="Choi Seungcheol">
+                    <h5>Choi Seungcheol</h5>
+                    <p>Lead Developer</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 BookView. All Rights Reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+        </p>
+    </footer>
+
+    <!-- Perbaiki urutan script -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterGenre(genre) {
+            var bookItems = document.querySelectorAll('.book-item');
+            bookItems.forEach(function(book) {
+                if (book.classList.contains(genre)) {
+                    book.style.display = 'block';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        }
+
+        window.onload = function() {
+            var bookItems = document.querySelectorAll('.book-item');
+            bookItems.forEach(function(book) {
+                book.style.display = 'none';
+            });
+        };
+    </script>
+</body>
+</html>

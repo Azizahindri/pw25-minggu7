@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(115, 0, 35);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgb(86, 6, 6);
+            position: relative;
+            padding-top: 20px; 
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-header {
+            background-color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .review-text {
+            font-size: 16px;
+            color: #7a0a0a;
+        }
+
+        .review-rating {
+            font-size: 18px;
+            color: #f39c12;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #831717; 
+            padding-bottom: 5px;
+        }
+
+        .review-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .review-date {
+            font-size: 14px;
+            color: #cf3030;
+        }
+
+        .btn-back {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .btn-back a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #8a3838;
+        }
+
+        .btn-back a:hover {
+            text-decoration: underline;
+        }
+
+        h1, h3 {
+            text-align: center;
+            color: #fafcff;
+            font-family: 'Georgia', serif;
+        }
+
+        #bookTitle {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffcc00; 
+            background: linear-gradient(45deg, #ceacacf7, #ffffff); 
+            -webkit-background-clip: text;
+            color: transparent;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .btn-back p {
+            font-size: 18px;
+            color: #fafcff;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p style="color: #ffffff; text-align: center;" >Temukan berbagai ulasan dan pengalaman dari pembaca lain yang telah menyelesaikan buku ini. Mari kita lihat apa yang mereka pikirkan!</p>
+
+        <h3 id="bookTitle"></h3>
+
+        <div id="reviewList" class="mt-4"></div>
+
+        <div class="btn-back">
+            <p style="color: #fafcff;">Ingin memberi review?</p>
+            <a href="form.html" class="btn btn-secondary" style="color: #ffffff;">Review</a>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookTitle = urlParams.get('title'); 
+
+        document.getElementById('bookTitle').textContent = bookTitle;
+
+        const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+        const filteredReviews = reviews.filter(review => review.title === bookTitle);
+
+        const reviewList = document.getElementById('reviewList');
+        if (filteredReviews.length > 0) {
+            filteredReviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.classList.add('card', 'mb-3');
+                reviewElement.innerHTML = `
+                    <div class="card-body">
+                        <!-- Header untuk Nama dan Tanggal -->
+                        <div class="review-header">
+                            <div class="review-name">${review.name}</div>
+                            <div class="review-date">${review.date}</div>
+                        </div>
+                        <!-- Isi Review -->
+                        <p class="review-text"><strong>Review:</strong> ${review.content}</p>
+                        <p class="review-rating"><strong></strong> ${'⭐'.repeat(review.rating)}</p>
+                    </div>
+                `;
+                reviewList.appendChild(reviewElement);
+            });
+        } else {
+            reviewList.innerHTML = '<p class="text-center">Tidak ada ulasan untuk buku ini.</p>';
+        }
+    </script>
+</body>
+</html>

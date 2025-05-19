@@ -14,7 +14,7 @@ $result = mysqli_query($conn, $query);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: rgb(115, 0, 35);
+            background-color: rgb(28, 79, 45);
             font-family: 'Arial', sans-serif;
             color: #fafcff;
         }
@@ -96,14 +96,14 @@ $result = mysqli_query($conn, $query);
         }
 
         .footer {
-            background-color: #343a40;
-            color: white;
+            background-color:rgb(255, 255, 255);
+            color: green;
             padding: 20px 0;
             text-align: center;
         }
 
         .footer a {
-            color: #ffffff;
+            color:rgb(28, 80, 23);
             text-decoration: none;
         }
 
@@ -114,13 +114,13 @@ $result = mysqli_query($conn, $query);
             background-color: #ffffff;
         }
         .navbar-nav .nav-link {
-            color: rgb(255, 0, 0) !important; 
+            color: rgb(33, 80, 40) !important; 
         }
         .navbar-nav .nav-link:hover {
             color: rgb(0, 0, 0) !important; 
         }
         .navbar-nav .nav-link.active {
-            color: rgb(187, 9, 9) !important;
+            color: rgb(28, 97, 37) !important;
         }
 
         /* Ensure the dropdown is clickable */
@@ -132,22 +132,20 @@ $result = mysqli_query($conn, $query);
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="color: crimson;">BookView</a>
+            <a class="navbar-brand" href="#" style="color: green;">Freshure</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="Beranda.php">Beranda</a>
+                        <a class="nav-link" href="Beranda.php">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">Tentang Kami</a>
+                        <a class="nav-link active" href="about.php">Tentang Kami</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Genre
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Jenis </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#" onclick="filterGenre('fiksi')">Fiksi</a></li>
                             <li><a class="dropdown-item" href="#" onclick="filterGenre('non-fiksi')">Non-Fiksi</a></li>
@@ -181,20 +179,21 @@ $result = mysqli_query($conn, $query);
     
     <div class="container">
         <div class="about-header">
-            <h2 class="section-title"> BookView</h2>
-            <p>BookView adalah platform yang memungkinkan para pembaca untuk berbagi pengalaman dan ulasan tentang buku yang telah mereka baca. Temukan ulasan yang membantu, bergabung dengan komunitas kami, dan beri tahu dunia pendapatmu tentang buku favoritmu!</p>
+            <h2 class="section-title"> Freshure </h2>
         </div>
 
         <section>
                 <div class="col-md-6">
                     <p class="about-text">
-                        BookView adalah komunitas yang didedikasikan untuk para pembaca yang ingin berbagi ulasan buku, mendapatkan rekomendasi, dan mencari tahu buku mana yang layak dibaca. Kami percaya bahwa membaca adalah pengalaman pribadi yang lebih baik jika dibagikan dengan orang lain. 
+                        Selamat datang di Freshure, tempat di mana tanaman hidroponik berkualitas tinggi bertemu dengan para pecinta pertanian modern!
                     </p>
                     <p class="about-text">
-                        Kami menyediakan sebuah platform yang mudah digunakan untuk para pembaca untuk memberikan ulasan mereka, memberikan rating, dan berbagi pendapat tentang buku yang telah mereka baca. Kami ingin membantu pembaca membuat keputusan yang lebih baik dengan memberikan informasi yang mereka butuhkan.
+                        Kami menghadirkan beragam pilihan sayur segar, buah lezat, dan bunga indah, semuanya ditanam dengan metode hidroponik yang ramah lingkungan dan efisien. Hidroponik memungkinkan tanaman tumbuh lebih sehat, bebas dari pestisida berbahaya, serta menghasilkan panen berkualitas tanpa bergantung pada tanah.
                     </p>
                     <p class="about-text">
-                        Sejak diluncurkan, BookView telah menjadi tempat bagi pembaca dari berbagai kalangan untuk terhubung dan berbagi kecintaan mereka terhadap dunia literasi. Kami berkomitmen untuk terus memperbaiki platform ini agar pengalaman berbagi buku menjadi lebih menyenangkan.
+                        Dengan komitmen untuk menyediakan produk terbaik, kami bekerja sama dengan petani hidroponik berpengalaman serta menerapkan standar ketat dalam setiap tahap pertumbuhan tanaman. Kami percaya bahwa makanan sehat dan lingkungan yang lebih hijau adalah masa depan, dan kami ingin menjadi bagian dari perjalanan Anda menuju gaya hidup yang lebih sehat dan berkelanjutan.                    </p>
+                    <p class="about-text">
+                        Temukan keindahan dan manfaat tanaman hidroponik bersama kami, dan rasakan perbedaannya! 🌿
                     </p>
                 </div>
             </div>

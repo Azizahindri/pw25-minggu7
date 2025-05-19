@@ -29,13 +29,13 @@ $result = mysqli_query($conn, $queryBook);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Review Buku</title>
+    <title>Formulir Review tumbuhan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.5/dist/sweetalert2.min.css" rel="stylesheet">
 
     <style>
         body {
-            background-color: rgb(115, 0, 35);
+            background-color: rgb(28, 79, 45);
             font-family: 'Poppins', sans-serif;
         }
         .header {
@@ -90,7 +90,7 @@ $result = mysqli_query($conn, $queryBook);
 
 <div class="header">
         <h1><?= $isEdit ? "Edit Review" : "Tulis Review" ?> ✎</h1>
-        <p><?= $isEdit ? "Ubah ulasan Anda untuk buku ini." : "Tulis ulasan dan beri rating buku ini." ?></p>
+        <p><?= $isEdit ? "Ubah ulasan Anda untuk tumbuhan ini." : "Tulis ulasan dan beri rating tumbuhan ini." ?></p>
         <hr>
     </div>
 
@@ -102,9 +102,9 @@ $result = mysqli_query($conn, $queryBook);
             </div>
 
             <div class="form-group">
-                <label for="bookTitle">Judul Buku:</label>
+                <label for="bookTitle">Jenis:</label>
                 <select id="book_title" name="book_title" class="form-control" required>
-                    <option value="">Pilih Judul Buku</option>
+                    <option value="">Pilih jenis tumbuhan</option>
                     <?php
                     while ($row = $result->fetch_assoc()) {
                         $selected = ($isEdit && $review['book_id'] == $row['id_book']) ? 'selected' : '';

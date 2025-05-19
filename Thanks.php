@@ -35,7 +35,7 @@
 
         h1 {
             font-size: 40px;
-            color: #9f1c1c;
+            color:rgba(24, 127, 20, 0.41);
             margin-bottom: 20px;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -54,7 +54,7 @@
         a {
             display: inline-block;
             padding: 12px 25px;
-            background-color: #8d2424;
+            background-color:rgb(18, 113, 72);
             color: white;
             font-size: 16px;
             text-decoration: none;
@@ -63,7 +63,7 @@
         }
 
         a:hover {
-            background-color: #e53e2f;
+            background-color:rgb(0, 0, 0);
         }
 
 

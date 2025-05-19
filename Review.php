@@ -37,7 +37,7 @@ $resultReview = $stmtReview->get_result();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: rgb(115, 0, 35);
+            background-color: rgb(28, 79, 45);
             font-family: 'Arial', sans-serif;
         }
 

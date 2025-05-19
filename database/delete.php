@@ -5,7 +5,6 @@ include 'db.php';
 if (isset($_GET['id'])) {
     $id_review = $_GET['id'];
 
-    // SQL query untuk menghapus review berdasarkan ID
     $sql = "DELETE FROM crud_041_book_reviews WHERE id = ?";
 
     // Persiapkan statement
